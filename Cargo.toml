@@ -1,0 +1,19 @@
+[package]
+name = "mlir-testutils"
+version = "0.1.0"
+edition = "2024"
+readme = "README.md"
+keywords = ["mlir"]
+categories = ["development-tools::testing"]
+description = "Utilities for writing tests that use MLIR."
+repository = "https://github.com/0xddom/mlir-testutils"
+license = "Apache-2.0"
+
+
+[dependencies]
+melior = "0.25.1"
+similar-asserts = {version = "1.7", optional = true }
+
+[features]
+default = []
+similar-asserts = ["dep:similar-asserts"]
