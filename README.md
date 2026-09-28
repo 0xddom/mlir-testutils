@@ -8,18 +8,18 @@ instead of the standard [`assert_eq`](https://doc.rust-lang.org/std/macro.assert
 
 ## Build requirements
 
-Building this crate requires an LLVM/MLIR 20 installation. The transitive `mlir-sys`
+Building this crate requires an LLVM/MLIR 23 installation. The transitive `mlir-sys`
 and `tblgen` build scripts need its `llvm-config` and TableGen tools, so set both
 variables to that installation's prefix before running Cargo:
 
 ```sh
 # macOS/Linux with Homebrew
-brew install llvm@20
-export MLIR_SYS_200_PREFIX="$(brew --prefix llvm@20)"
-export TABLEGEN_200_PREFIX="$MLIR_SYS_200_PREFIX"
+brew install llvm@23
+export MLIR_SYS_230_PREFIX="$(brew --prefix llvm@23)"
+export TABLEGEN_230_PREFIX="$MLIR_SYS_230_PREFIX"
 ```
 
 For a non-Homebrew installation, replace the value with the path to the LLVM
 installation (the directory containing `bin/llvm-config`). These settings resolve
-build errors such as `failed to find correct version (20.x.x) of llvm-config`
+build errors such as `failed to find correct version (23.x.x) of llvm-config`
 from `mlir-sys` or `tblgen`.
